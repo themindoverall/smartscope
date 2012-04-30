@@ -8,6 +8,9 @@ module Smartscope
 		end
 
 		def verify(scope)
+			unless @scopes
+				return false
+			end
 			if @scopes.include?('*') or @scopes.include?(@ns + ':*')
 				true
 			else

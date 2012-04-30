@@ -14,4 +14,9 @@ describe Smartscope do
 		scope.verify('index').should be_true
 		scope.verify('create').should be_false
 	end
+	it "verifies false when scope is nil" do
+		scope = Smartscope::Scope.new('test', nil)
+		scope.verify('index').should be_false
+		scope.verify('create').should be_false
+	end
 end
